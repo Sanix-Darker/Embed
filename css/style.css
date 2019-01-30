@@ -1,0 +1,72 @@
+#Embed_pane {
+	position: fixed;
+	min-width: 30%;
+	width: 30%;
+	min-height: 27%;
+	height: auto;
+	top: 2%;
+	right: 2%;
+	margin: 0;
+	padding: 5px;
+	z-index:99999999999!important;
+	border: 2px solid rgb(51, 103, 214);
+	border-radius: 4px;
+	background: rgb(51, 103, 214);
+	box-shadow: 0 5px 12px rgba(0,0,0,0.7);
+}
+#Embed_input{
+	border-radius: 7%;
+    width: 60%;
+    margin-right: 5%;
+	float:right;
+	padding:3px;
+	font-size:11px;
+}
+#Embed_content{
+	background-image: url('../img/loading.gif') center;
+}
+#Embed_iframe{
+	/* position:fixed; */
+	position: absolute;
+	margin-top:1.6%;
+	left:0;
+	width:100%;
+	height:86%;
+	border:0;
+}
+#Embed_title {
+	font-family: monospace;
+	background: rgb(51, 103, 214);
+	color: white;
+	font-size: 15px;
+	height: 20px;
+	text-align: left;
+}
+#Embed_ghostpane {
+	background: #999;
+	opacity: 0.2;
+	min-width: 30%;
+	width: 30%;
+	min-height: 23%;
+	height: auto;
+	top: 2%;
+	right: 2%;
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	z-index: 999999!important;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+#Embed_close_button{
+	float: right;
+	padding: 9px;
+	border-radius: 100%;
+	cursor: pointer;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	background: red;
+}
