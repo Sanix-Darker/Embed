@@ -110,12 +110,54 @@ function processAjaxData(response, urlPath){
 function runScript(e) {
   if (e.keyCode == 13) {
       //processAjaxData({"html":document.body.innerHTML,"pageTitle":"Title"}, e.target.value);
-      Iframe.src = e.target.value;
+      if(e.target.value.includes('http')){
+      
+        if(e.target.value.includes('youtube.com')){
+
+          var urlParams = new URLSearchParams(e.target.value.replace("?", "&"));
+          var video_id = urlParams.get('v');
+
+          console.log("video_id: ", video_id);
+          
+          var playlist = video_id;
+          if(urlParams.has('list')){
+            playlist = urlParams.get('list');
+          }
+          console.log("playlist: ", playlist);
+
+          Iframe.src = "https://www.youtube.com/embed/" + video_id + "?autoplay=0&controls=1&loop=0&playlist="+playlist+"&amp;showinfo=0";
+        }
+        else if(e.target.value.includes('youtu.be')){ 
+          var first_part = e.target.value.split('?')[0];
+          var video_id = first_part.split('/')[3];
+
+          var urlParams = new URLSearchParams(e.target.value.replace("?", "&"));
+          var playlist = video_id;
+          if(urlParams.has('list')){
+            playlist = urlParams.get('list');
+          }
+
+          Iframe.src = "https://www.youtube.com/embed/" + video_id + "?autoplay=0&controls=1&loop=0&playlist="+playlist+"&amp;showinfo=0";
+        }
+        else{
+  
+          Iframe.src = e.target.value;
+        }
+
+      }else{
+        Iframe.src = "https://www.bing.com/?q="+e.target.value;
+      }
+
   }
 }
 
+
 // http://www.youtube.com/
-//
+// https://www.youtube.com/embed/?listType=playlist&list=PLAYLIST_ID
+// https://www.youtube.com/watch?v=Shk7qcvqDOo
+
+// Best:
+// https://www.youtube.com/embed/SYM-RJwSGQ8?autoplay=0&controls=1&loop=0&playlist=8HSr8BjcufM
 
 // http://www.netflix.com/
 //
