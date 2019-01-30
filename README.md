@@ -23,7 +23,7 @@ I do not know if this is a whim or a need that haunts me, because I know I'm not
 
 ### How to use it
 
-> See the <a href="" target="_blank">INSTALLATION VIDEO</a>
+> See the <a href="https://youtu.be/OTYhsvwlsmc" target="_blank">INSTALLATION VIDEO</a>
 > And <a href="https://youtu.be/d0GykE_UcN4" target="_blank">HOW TO USE EMBED</a>
 
 * Integrate the Extension in your browser see how to do here (<a href="">Integration demo</a>) the extension is not yet on a store so....
