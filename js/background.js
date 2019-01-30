@@ -27,10 +27,15 @@ var redraw = false;
 var Input = document.createElement("input");
 Input.id="Embed_input";
 Input.type="text";
-Input.placeholder="Link of video (Ex: https://www.youtube.com/watch?v=qehLslERiks)";
+Input.placeholder="https://www.youtube.com/watch?v=qehLslERiks";
 Input.onkeypress=runScript
 
-var Title = document.createTextNode("🐼Embed");
+
+var Title = document.createElement("span");
+Title.appendChild(document.createTextNode("🐼Embed"));
+Title.id = "Title_embed";
+
+var Br = document.createElement("br");
 
 var Embed_close_button = document.createElement("span");
 Embed_close_button.id="Embed_close_button";
@@ -62,28 +67,50 @@ var Embed_ghostpane = document.createElement("div");
 Embed_ghostpane.id = "Embed_ghostpane";
 Embed_ghostpane.style.display="none";
 
+
+// The embed start button
+var Button_start = document.createElement("button");
+Button_start.id="Embed_button_start";
+Button_start.appendChild(document.createTextNode("🐼 Open Embed"));
+Button_start.onclick=start_Embed;
+
 document.body.appendChild(Embed_pane);
 document.body.appendChild(Embed_ghostpane);
+document.body.appendChild(Button_start);
+
+function start_Embed(event){
+    document.getElementById("Embed_pane").style.display = "block";
+    document.getElementById("Embed_ghostpane").style.display = "block";
+    document.getElementById("Embed_button_start").style.display = "none";
+}
 
 
+// Communication between The popup and the background
 chrome.extension.onConnect.addListener(function(port) {
-
   port.onMessage.addListener(function(msg) {
-
       port.postMessage("Hi World");
-
   });
-})
+});
 
 
 function closeEmbed(e){
-  Embed_pane.parentNode.removeChild(Embed_pane);
-  Embed_ghostpane.parentNode.removeChild(Embed_ghostpane);
+  // Embed_pane.parentNode.removeChild(Embed_pane);
+  // Embed_ghostpane.parentNode.removeChild(Embed_ghostpane);
+  document.getElementById("Embed_pane").style.display = "none";
+  document.getElementById("Embed_ghostpane").style.display = "none";
+  document.getElementById("Embed_button_start").style.display = "block";
+}
+
+function processAjaxData(response, urlPath){
+  document.getElementById("content").innerHTML = response.html;
+  document.title = response.pageTitle;
+  window.history.pushState({"html":response.html,"pageTitle":response.pageTitle},"", urlPath);
 }
 
 function runScript(e) {
   if (e.keyCode == 13) {
-      alert(e.target.value);
+      //processAjaxData({"html":document.body.innerHTML,"pageTitle":"Title"}, e.target.value);
+      Iframe.src = e.target.value;
   }
 }
 

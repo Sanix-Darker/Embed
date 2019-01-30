@@ -2,25 +2,28 @@
 	position: fixed;
 	min-width: 30%;
 	width: 30%;
-	min-height: 27%;
+	min-height: 30%;
 	height: auto;
 	top: 2%;
 	right: 2%;
 	margin: 0;
-	padding: 5px;
+	padding: 10px;
 	z-index:99999999999!important;
-	border: 2px solid rgb(51, 103, 214);
+	border: 5px solid rgb(51, 103, 214);
+	border-top: 7px solid rgb(51, 103, 214);
 	border-radius: 4px;
 	background: rgb(51, 103, 214);
 	box-shadow: 0 5px 12px rgba(0,0,0,0.7);
 }
 #Embed_input{
 	border-radius: 7%;
-    width: 60%;
+	width: 60%;
+	margin-top: -1.5%;
     margin-right: 5%;
 	float:right;
 	padding:3px;
-	font-size:11px;
+	padding-bottom: 5px;
+	font-size:13px;
 }
 #Embed_content{
 	background-image: url('../img/loading.gif') center;
@@ -28,18 +31,18 @@
 #Embed_iframe{
 	/* position:fixed; */
 	position: absolute;
-	margin-top:1.6%;
+	margin-top:-1.5%;
 	left:0;
 	width:100%;
-	height:86%;
+	height:83.5%;
 	border:0;
 }
 #Embed_title {
 	font-family: monospace;
 	background: rgb(51, 103, 214);
 	color: white;
-	font-size: 15px;
-	height: 20px;
+	font-size: 17px;
+	height: 30px;
 	text-align: left;
 }
 #Embed_ghostpane {
@@ -47,7 +50,7 @@
 	opacity: 0.2;
 	min-width: 30%;
 	width: 30%;
-	min-height: 23%;
+	min-height: 30%;
 	height: auto;
 	top: 2%;
 	right: 2%;
@@ -62,11 +65,30 @@
 	transition: all 0.25s ease-in-out;
 }
 
+#Title_embed{
+	float: left;
+	margin-top:-1.5%;
+}
+
 #Embed_close_button{
+	margin-top:-1.5%;
 	float: right;
 	padding: 9px;
 	border-radius: 100%;
 	cursor: pointer;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.5);
 	background: red;
+}
+
+#Embed_button_start{
+	cursor:pointer;
+	border:0px;
+	padding:5px;
+	position: fixed;
+	z-index: 99999999999999999999!important;
+	bottom: 2%;
+	left: 0%;
+	color:white;
+	background:rgb(51, 103, 214);
+	box-shadow: 0 4px 9px rgba(0,0,0,0.7);
 }
