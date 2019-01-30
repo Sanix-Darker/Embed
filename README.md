@@ -1,7 +1,8 @@
 <img src="logo.PNG" />
+
 # Embed.
 
-A Browser Extension allowing you to watch videos or browse externals links everywhere!
+A Browser Extension allowing you to watch videos or browse externals links everywhere in your browser!
 
 ### Introduction
 I do not know if this is a whim or a need that haunts me, because I know I'm not alone sometimes in this situation! Having several tabs open on my browser including youtube for example, it gives me to have to change tabs to have a scene or to pause on a video that is in progress, not just the videos but who never wanted to be both on wikkipedia and see a video on youtube at the same time? And why stop there? Browse other sites or search directly in the same place!
@@ -31,6 +32,9 @@ I do not know if this is a whim or a need that haunts me, because I know I'm not
 * Get a link or a text you want to search, paste it in the link input.
 * Press Enter and "Embed" will handle all.
 
+### Rendering
+
+<img src="render1.PNG" />
 
 ### Author
 
