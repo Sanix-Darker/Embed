@@ -34,8 +34,21 @@ I do not know if this is a whim or a need that haunts me, because I know I'm not
 
 ### Rendering
 
-<img src="render1.PNG" />
+<img src="render.PNG" />
+
+### TODO (for potentials contributors)
+
+- [ ] Manage playlist on youtube list.
+- [ ] Hndle more website by passing the SAME_ORIGIN restriction.
+- [ ] Synchronize Embe on each tab.
+- [ ] Open multiple Embed boxes or just works with tabs.
+- [ ] Been able to launch Embed when Chrome is close and use it everywhere on the PC.
+- [ ] Add a instant Chat for a specific link/video for all user using Embed at the same time.
 
 ### Author
 
 - [Sanix darker](https://github.com/Sanix-Darker)
+
+### LICENSE:
+
+[MIT License](https://github.com/Sanix-Darker/embed/blob/master/LICENSE)

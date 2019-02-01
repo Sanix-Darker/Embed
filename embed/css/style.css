@@ -27,6 +27,7 @@
 }
 #Embed_content{
 	background-image: url('../img/loading.gif') center;
+	background-size: 50%;
 }
 #Embed_iframe{
 	/* position:fixed; */

@@ -3,8 +3,13 @@
   "description": "Embed any video and wach it while browsing the web or Embed a webpage in another one!",
   "version": "1.0",
   "permissions": [
-      "activeTab"
+      "activeTab",
+      "background"
   ],
+  "icons": {
+    "16": "img/icon-16.png",
+    "48": "img/icon-48.png"
+  },
   "background": {
     "scripts": ["js/background.js"],
     "persistent": false
