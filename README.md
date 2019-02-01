@@ -14,6 +14,10 @@ I do not know if this is a whim or a need that haunts me, because I know I'm not
 - Do some research, etc.. (bing search engine used here).
 - light, Resizable, Dragable box.
 
+## Requirements
+
+- Chrome browser (Any version supporting the extensions Feature)
+
 ### How it's works
 
 - When a link is given to Embed, it generate a clone of the website you want to access.
@@ -26,7 +30,8 @@ I do not know if this is a whim or a need that haunts me, because I know I'm not
 > See the <a href="https://youtu.be/OTYhsvwlsmc" target="_blank">INSTALLATION VIDEO</a>
 > And <a href="https://youtu.be/d0GykE_UcN4" target="_blank">HOW TO USE EMBED</a>
 
-* Integrate the Extension in your browser see how to do here (<a href="">Integration demo</a>) the extension is not yet on a store so....
+* Enable the Developper Mode a top right in your "chrome://extensions" settings page.
+* Integrate the Extension in your browser see how to do here (<a href="https://youtu.be/OTYhsvwlsmc">Integration demo</a>) the extension is not yet on a store so....
 * A button will automatically appear on each webpage you browse after a reload, at the bottom-left.
 * Hit the "Open Embed" button.
 * Get a link or a text you want to search, paste it in the link input.
