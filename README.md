@@ -16,7 +16,8 @@ I do not know if this is a whim or a need that haunts me, because I know I'm not
 
 ## Requirements
 
-- Chrome browser (Any version supporting the extensions Feature)
+- Chrome browser (Any version supporting the extensions Feature).
+- Developper tools activated (n case this extension is not allready on Chrome store).
 
 ### How it's works
 
