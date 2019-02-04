@@ -43,6 +43,7 @@ I do not know if this is a whim or a need that haunts me, because I know I'm not
 
 ### TODO (for potentials contributors)
 
+- [ ] Handle a kind of history of link visited or video watched.
 - [ ] Manage playlist on youtube list.
 - [ ] Hndle more website by passing the SAME_ORIGIN restriction.
 - [ ] Synchronize Embe on each tab.

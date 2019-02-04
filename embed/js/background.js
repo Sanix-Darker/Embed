@@ -3,6 +3,12 @@
  * https://github.com/sanix-darker
  */
 
+/* Supported videos:
+* - youtube
+* - vimeo
+* - dailymotion
+*/
+
 
 // Minimum resizable area
 var minWidth = 60;
@@ -111,25 +117,23 @@ function runScript(e) {
   if (e.keyCode == 13) {
       //processAjaxData({"html":document.body.innerHTML,"pageTitle":"Title"}, e.target.value);
       if(e.target.value.includes('http')){
-      
-        if(e.target.value.includes('youtube.com')){
+        var video_id = "";
+        if(e.target.value.includes('youtube.')){
 
           var urlParams = new URLSearchParams(e.target.value.replace("?", "&"));
-          var video_id = urlParams.get('v');
-
-          console.log("video_id: ", video_id);
-          
+          video_id = urlParams.get('v');
+          //console.log("video_id: ", video_id);
           var playlist = video_id;
           if(urlParams.has('list')){
             playlist = urlParams.get('list');
           }
-          console.log("playlist: ", playlist);
+          //console.log("playlist: ", playlist);
 
           Iframe.src = "https://www.youtube.com/embed/" + video_id + "?autoplay=0&controls=1&loop=0&playlist="+playlist+"&amp;showinfo=0";
         }
         else if(e.target.value.includes('youtu.be')){ 
           var first_part = e.target.value.split('?')[0];
-          var video_id = first_part.split('/')[3];
+          video_id = first_part.split('/')[3];
 
           var urlParams = new URLSearchParams(e.target.value.replace("?", "&"));
           var playlist = video_id;
@@ -137,8 +141,21 @@ function runScript(e) {
             playlist = urlParams.get('list');
           }
 
-          Iframe.src = "https://www.youtube.com/embed/" + video_id + "?autoplay=0&controls=1&loop=0&playlist="+playlist+"&amp;showinfo=0";
+          Iframe.src = "https://www.youtube.com/embed/" + video_id + "?autoplay=0&controls=1&loop=0&playlist=" + playlist + "&amp;showinfo=0";
         }
+
+        else if(e.target.value.includes('vimeo.')){ 
+        
+          Iframe.src = "https://player.vimeo.com/video/" + e.target.value.split('/')[3];
+        
+        }
+
+        else if(e.target.value.includes('dailymotion.')){
+
+          Iframe.src = "https://www.dailymotion.com/embed/video/" + e.target.value.split('/')[4];
+        
+        }
+
         else{
   
           Iframe.src = e.target.value;
@@ -151,49 +168,6 @@ function runScript(e) {
   }
 }
 
-
-// http://www.youtube.com/
-// https://www.youtube.com/embed/?listType=playlist&list=PLAYLIST_ID
-// https://www.youtube.com/watch?v=Shk7qcvqDOo
-
-// Best:
-// https://www.youtube.com/embed/SYM-RJwSGQ8?autoplay=0&controls=1&loop=0&playlist=8HSr8BjcufM
-
-// http://www.netflix.com/
-//
-
-// http://www.vimeo.com/
-//
-
-// http://www.dailymotion.com/
-//
-
-// http://www.hulu.com/
-//
-
-// http://www.vube.com/
-//
-
-// http://www.twitch.tv/
-//
-
-// http://www.liveleak.com/
-//
-
-// http://www.vine.co/
-//
-
-// http://www.ustream.tv/
-//
-
-// http://www.break.com/
-//
-
-// http://www.tv.com/
-//
-
-// http://www.viewster.com/
-//
 
 var pane = Embed_pane;
 var ghostpane = Embed_ghostpane;
