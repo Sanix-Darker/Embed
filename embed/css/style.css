@@ -82,9 +82,11 @@
 }
 
 #Embed_button_start{
+	padding: 13px;
+	border-radius: 100%;
+	transition: all 0.65s;
 	cursor:pointer;
 	border:0px;
-	padding:5px;
 	position: fixed;
 	z-index: 99999999999999999999!important;
 	bottom: 2%;
@@ -92,6 +94,23 @@
 	color:white;
 	background:rgb(51, 103, 214);
 	box-shadow: 0 4px 9px rgba(0,0,0,0.7);
+}
+
+#Embed_button_start span{
+	display: none;
+	transition: all 0.65s;
+}
+
+#Embed_button_start:hover span{
+	display: inline-block;
+	transition: all 0.65s;
+}
+
+#Embed_button_start:hover{
+	/* font-size: 14px; */
+	padding: 10px;
+	border-radius: 0px;
+	transition: all 0.3s;
 }
 
 #goFalla{

@@ -73,16 +73,14 @@ goFalla.appendChild(document.createTextNode("Go Falla"));
 var goFalla_checked = false;
 function goFalla(event) {
 
-    if(event.target.checked == true){
-
-      goFalla_checked = true;
-      console.log("goFalla_checked: ", goFalla_checked);
-    }else{
-      
-      goFalla_checked = false;
-      console.log("goFalla_checked: ", goFalla_checked);
-
-   }
+  goFalla_checked = (event.target.checked == true) ? true : false;
+  //   if(event.target.checked == true){
+  //     goFalla_checked = true;
+  //     //console.log("goFalla_checked: ", goFalla_checked);
+  //   }else{
+  //     goFalla_checked = false;
+  //     //console.log("goFalla_checked: ", goFalla_checked);
+  //  }
 }
 
 var new_value_goFalla_checked = true;
@@ -100,7 +98,7 @@ setInterval(function(){
             Iframe.src=url;
         });
       });
-      console.log("dedans");
+      //console.log("dedans");
       new_value_goFalla_checked = goFalla_checked
     }
 
@@ -119,7 +117,7 @@ setInterval(function(){
       if(dja > 0){
         window.reload();
       }
-      console.log("dehors");
+      //console.log("dehors");
       new_value_goFalla_checked = goFalla_checked
     }
 
@@ -141,12 +139,17 @@ var Embed_ghostpane = document.createElement("div");
 Embed_ghostpane.id = "Embed_ghostpane";
 Embed_ghostpane.style.display="none";
 
+var span_onbutton = document.createElement("span");
+span_onbutton.id = "span_onbutton";
+span_onbutton.appendChild(document.createTextNode("Open Embed"));
 
 // The embed start button
 var Button_start = document.createElement("button");
 Button_start.id="Embed_button_start";
-Button_start.appendChild(document.createTextNode("🐼 Open Embed"));
+Button_start.appendChild(document.createTextNode("🐼"));
+Button_start.appendChild(span_onbutton);
 Button_start.onclick=start_Embed;
+
 
 document.body.appendChild(Embed_pane);
 document.body.appendChild(Embed_ghostpane);
