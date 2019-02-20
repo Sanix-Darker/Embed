@@ -1,7 +1,7 @@
 var port = chrome.extension.connect({
-    name: "Sample Communication"
+    name: "Embed communication Communication"
 });
 
 port.onMessage.addListener(function(msg) {
-    console.log("message recieved: " + msg);
+    console.log("Message recieved: " + msg);
 });

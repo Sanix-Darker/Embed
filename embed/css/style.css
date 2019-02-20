@@ -93,3 +93,15 @@
 	background:rgb(51, 103, 214);
 	box-shadow: 0 4px 9px rgba(0,0,0,0.7);
 }
+
+#goFalla{
+	cursor: pointer;
+	position: absolute;
+    bottom: 0px;
+    padding: 3px;
+    padding-right: 15px;
+    color: white;
+    left: 0;
+    border-top-right-radius: 30px;
+    background: rgb(51, 103, 214);
+}

@@ -36,7 +36,6 @@ Input.type="text";
 Input.placeholder="https://www.youtube.com/watch?v=qehLslERiks";
 Input.onkeypress=runScript
 
-
 var Title = document.createElement("span");
 Title.appendChild(document.createTextNode("🐼Embed"));
 Title.id = "Title_embed";
@@ -59,9 +58,78 @@ Iframe.frameborder="0"
 Iframe.allowfullscreen=""
 Iframe.src="https://www.youtube.com/embed/qehLslERiks"
 
+
+var Checkbox = document.createElement("input");
+Checkbox.id="goFalla_check";
+Checkbox.type="radio";
+Checkbox.onchange=goFalla;
+
+var goFalla = document.createElement("label");
+goFalla.id = "goFalla";
+goFalla.appendChild(Checkbox);
+goFalla.appendChild(document.createTextNode("Go Falla"));
+
+
+var goFalla_checked = false;
+function goFalla(event) {
+
+    if(event.target.checked == true){
+
+      goFalla_checked = true;
+      console.log("goFalla_checked: ", goFalla_checked);
+    }else{
+      
+      goFalla_checked = false;
+      console.log("goFalla_checked: ", goFalla_checked);
+
+   }
+}
+
+var new_value_goFalla_checked = true;
+var dja = 0;
+setInterval(function(){
+
+  if (goFalla_checked == true){
+
+    if(new_value_goFalla_checked != goFalla_checked){
+      [].forEach.call(document.querySelectorAll('a'), function(link) {
+        dja++;
+        link.addEventListener('mouseover', function(event) {
+            var url = this.href;
+            //window.location.replace(url);
+            Iframe.src=url;
+        });
+      });
+      console.log("dedans");
+      new_value_goFalla_checked = goFalla_checked
+    }
+
+  }else{
+
+    if(new_value_goFalla_checked != goFalla_checked){
+      // [].forEach.call(document.querySelectorAll('a'), function(link) {
+
+      //   // link.addEventListener('mouseover', function(event) {
+      //   //     //var url = this.href;
+      //   //     //window.location.replace(url);
+      //   //     //Iframe.src=url;
+      //   // });
+      //   link.removeEventListener("mousedown", function(event) { console.log("Desactivated")}, true);
+      // });
+      if(dja > 0){
+        window.reload();
+      }
+      console.log("dehors");
+      new_value_goFalla_checked = goFalla_checked
+    }
+
+  }
+}, 1000);
+
 var Embed_content = document.createElement("div");
 Embed_content.id="Embed_content";
 Embed_content.appendChild(Iframe);
+Embed_content.appendChild(goFalla);
 
 var Embed_pane = document.createElement("div");
 Embed_pane.id="Embed_pane";
@@ -310,7 +378,7 @@ function animate() {
 
     if (b.top < FULLSCREEN_MARGINS || b.left < FULLSCREEN_MARGINS || b.right > window.innerWidth - FULLSCREEN_MARGINS || b.bottom > window.innerHeight - FULLSCREEN_MARGINS) {
       // hintFull();
-      setBounds(ghostpane, 0, 0, window.innerWidth, window.innerHeight);
+      setBounds(ghostpane, 0, 0, window.innerWidth, window.innerHeight / 2);
       ghostpane.style.opacity = 0.2;
     } else if (b.top < MARGINS) {
       // hintTop();
@@ -381,7 +449,7 @@ function onUp(e) {
 
     if (b.top < FULLSCREEN_MARGINS || b.left < FULLSCREEN_MARGINS || b.right > window.innerWidth - FULLSCREEN_MARGINS || b.bottom > window.innerHeight - FULLSCREEN_MARGINS) {
       // hintFull();
-      setBounds(pane, 0, 0, window.innerWidth, window.innerHeight);
+      setBounds(pane, 0, 0, window.innerWidth, window.innerHeight / 2);
       preSnapped = snapped;
     } else if (b.top < MARGINS) {
       // hintTop();
