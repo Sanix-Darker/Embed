@@ -150,7 +150,6 @@ Button_start.appendChild(document.createTextNode("🐼"));
 Button_start.appendChild(span_onbutton);
 Button_start.onclick=start_Embed;
 
-
 document.body.appendChild(Embed_pane);
 document.body.appendChild(Embed_ghostpane);
 document.body.appendChild(Button_start);
